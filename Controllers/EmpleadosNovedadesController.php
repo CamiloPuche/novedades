@@ -30,15 +30,15 @@ class EmpleadosNovedadesController
 
             // Validar que los campos no estén vacíos
             if (empty($id_empleado) || empty($id_novedad) || empty($valor) || empty($fecha)) {
-                echo "Por favor, complete todos los campos";
+                $validacionMensaje = "Por favor, complete todos los campos";
             } else {
                 // Insertar la nueva novedad
                 $result = $this->model->insertEmpleadosNovedad($id_empleado, $id_novedad, $valor, $fecha);
 
                 if ($result) {
-                    echo "Novedad agregada correctamente";
+                    $validacionMensaje = "Novedad agregada correctamente";
                 } else {
-                    echo "Error al agregar la novedad";
+                    $validacionMensaje = "Error al agregar la novedad";
                 }
             }
         }
